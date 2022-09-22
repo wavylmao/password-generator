@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c;
+}
+
+.heading {
+  font-family: "Space Mono", monospace;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 40px;
+}
