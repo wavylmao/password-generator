@@ -2,10 +2,9 @@ import { useState } from "react";
 import "./styles.scss";
 
 export default function App() {
-
   const [rangeValue, setRangeValue] = useState("1");
 
-  function handleRangeChange(){
+  function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
 
@@ -23,9 +22,10 @@ export default function App() {
           />
         </div>
         <div className="param-container">
-          <div>
-            <h3 className="param-header">Character Length</h3>
-          <h1 className="length-counter">{rangeValue}</h1>
+          <h3 className="param-header">Character Length</h3>
+          <div className="length-counter-container">
+            <h1 className="length-counter">{rangeValue}</h1>
+          </div>
           <div className="range-container">
             <input
               onChange={handleRangeChange}
@@ -40,24 +40,28 @@ export default function App() {
           <div className="checkbox-container">
             <input className="checkbox" type="checkbox" />
             <h3 className="param">Include Uppercase Letters</h3>
+            <br />
             <input className="checkbox" type="checkbox" />
             <h3 className="param">Include Lowercase Letters</h3>
+            <br />
             <input className="checkbox" type="checkbox" />
             <h3 className="param">Include Numbers</h3>
+            <br />
             <input className="checkbox" type="checkbox" />
             <h3 className="param">Include Symbols</h3>
-            <div className="strength-container">
-            <input
-              value=""
-              placeholder="STRENGTH"
-              className="strength-output"
-              type="text"
-              readOnly
-            />
-            </div>
-            </div>
-          
             <br />
+            <div className="strength-container">
+              <input
+                value=""
+                placeholder="STRENGTH"
+                className="strength-output"
+                type="text"
+                readOnly
+              />
+            </div>
+          </div>
+          <br />
+          <div className="button-container">
             <button className="generate-button">Generate</button>
           </div>
         </div>

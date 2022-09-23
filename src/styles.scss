@@ -48,58 +48,48 @@ body {
     padding-top: 20px;
     width: 620px;
     margin: auto;
+    padding-bottom: 20px;
+
+    .button-container{
+      .generate-button{
+        margin-left: 20px;
+      }
+    }
+
+    .checkbox-container{
+      .checkbox{
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+    }
+
+    .length-counter-container{
+      position: relative;
+
+      .length-counter{
+        font-family: "Space Mono", monospace;
+        color: #25ff85;
+        display: inline;
+        position: absolute;
+        right: 20px;
+        top: -60px;
+      }
+    }
     
     .range-container{
-      padding-left: 20px;
-      
+
       .range-input{
-        -webkit-appearance: none;
-        width: 100%;
-        background: transparent;
+        margin-top: 20px;
       }
-      
-      .range-input::-webkit-slider-thumb{
-        -webkit-appearance: none;
-        color: #fff;
-        border: none;
-        height: 36px;
-        width: 36px;
-        margin-top: 14px;
-      }
-      
-      .range-input::-moz-range-thumb{
-        color: #fff;
-        border: none;
-        height: 36px;
-        width: 36px;
-        margin-top: 14px;
-      }
-      
-      .range-input::-ms-thumb{
-        color: #fff;
-        border: none;
-        height: 36px;
-        width: 36px;
-        margin-top: 14px;
-      }
-      
-      .range-input:focus{
-        outline: none;
-      }
-      
-      .range-input::-ms-track{
-        width: 100%;
-        cursor: pointer;
-        background: transparent; 
-        border-color: transparent;
-        color: transparent;
-      }
+
+      padding-left: 20px;
     }
     
     .param{
         color: #CBCBCB;
         font-family: "Space Mono", monospace;
         padding-left: 20px;
+        display: inline;
     }
     
     .param-header{
@@ -109,16 +99,9 @@ body {
         padding-left: 20px;
     }
     
-    .length-counter{
-        font-family: "Space Mono", monospace;
-        color: #25ff85;
-        display: inline;
-        position: relative;
-        padding-left: 500px;
-    }
-    
     .strength-container{
       text-align: center;
+      margin-top: 20px;
       .strength-output{
       margin: auto;
       outline: 0;
