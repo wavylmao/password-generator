@@ -29,6 +29,7 @@ body {
       color: #adadad;
       font-size: 1.5rem;
       padding-left: 20px;
+      margin-bottom: 20px;
     }
 
     .password-output::placeholder {
@@ -44,9 +45,26 @@ body {
 
   .param-container{
     background-color: #3b3b3b;
+    padding-top: 20px;
 
     .param{
-        color: #1c1c1c;
+        color: #CBCBCB;
+        font-family: "Space Mono", monospace;
+    }
+    
+    .param-header{
+        color: #CBCBCB;
+        font-family: "Space Mono", monospace;
+        display: inline;
+    }
+    
+    .length-counter{
+        font-family: "Space Mono", monospace;
+        color: #25ff85;
+        display: inline;
+        position: absolute;
+        right: 20px;
+        float: top;
     }
     
     .strength-output{
