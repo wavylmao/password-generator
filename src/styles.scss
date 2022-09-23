@@ -1,0 +1,62 @@
+body {
+  background-color: #1c1c1c;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  .heading {
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin: 40px;
+    color: #adadad;
+  }
+
+  .output-container {
+    text-align: center;
+
+    .password-output {
+      margin: auto;
+      outline: 0;
+      background-color: #3b3b3b;
+      border: none;
+      width: 400px;
+      height: 60px;
+      font-family: "Space Mono", monospace;
+      font-weight: 500;
+      color: #adadad;
+      font-size: 1.5rem;
+      padding-left: 20px;
+    }
+
+    .password-output::placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Space Mono", monospace;
+      font-weight: 600;
+      font-size: 1.5rem;
+      vertical-align: baseline;
+    }
+  }
+
+  .param-container{
+    background-color: #3b3b3b;
+
+    .strength-output{
+            margin: auto;
+      outline: 0;
+      background-color: #1c1c1c;
+      border: none;
+      width: 400px;
+      height: 60px;
+      font-family: "Space Mono", monospace;
+      font-weight: 500;
+      color: #adadad;
+      font-size: 1.5rem;
+      padding-left: 20px;
+    }
+  }
+}
