@@ -23,7 +23,7 @@ export default function App() {
           />
         </div>
         <div className="param-container">
-          <h3>Character Length</h3>
+          <h3 className="param">Character Length</h3>
           <h1 className="length-counter">{rangeValue}</h1>
           <div className="range-container">
             <input
@@ -38,13 +38,13 @@ export default function App() {
           </div>
           <div className="checkbox-container">
             <input className="checkbox" type="checkbox" />
-            <h3 className="checkbox-params">Include Uppercase Letters</h3>
+            <h3 className="param">Include Uppercase Letters</h3>
             <input className="checkbox" type="checkbox" />
-            <h3 className="checkbox-params">Include Lowercase Letters</h3>
+            <h3 className="param">Include Lowercase Letters</h3>
             <input className="checkbox" type="checkbox" />
-            <h3 className="checkbox-params">Include Numbers</h3>
+            <h3 className="param">Include Numbers</h3>
             <input className="checkbox" type="checkbox" />
-            <h3 className="checkbox-params">Include Symbols</h3>
+            <h3 className="param">Include Symbols</h3>
             <input
               value=""
               placeholder="STRENGTH"
