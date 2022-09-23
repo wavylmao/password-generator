@@ -23,7 +23,8 @@ export default function App() {
           />
         </div>
         <div className="param-container">
-          <div><h3 className="param-header">Character Length</h3>
+          <div>
+            <h3 className="param-header">Character Length</h3>
           <h1 className="length-counter">{rangeValue}</h1>
           <div className="range-container">
             <input
@@ -53,7 +54,8 @@ export default function App() {
               type="text"
               readOnly
             />
-            </div></div>
+            </div>
+            </div>
           
             <br />
             <button className="generate-button">Generate</button>
