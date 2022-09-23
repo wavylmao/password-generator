@@ -22,7 +22,7 @@ body {
       outline: 0;
       background-color: #3b3b3b;
       border: none;
-      width: 400px;
+      width: 600px;
       height: 60px;
       font-family: "Space Mono", monospace;
       font-weight: 500;
@@ -46,7 +46,9 @@ body {
   .param-container{
     background-color: #3b3b3b;
     padding-top: 20px;
-
+    width: 600px;
+    margin: auto;
+    
     .param{
         color: #CBCBCB;
         font-family: "Space Mono", monospace;
@@ -67,18 +69,21 @@ body {
         float: top;
     }
     
-    .strength-output{
-            margin: auto;
+    .strength-container{
+      text-align: center;
+      .strength-output{
+      margin: auto;
       outline: 0;
       background-color: #1c1c1c;
       border: none;
-      width: 400px;
+      width: 500px;
       height: 60px;
       font-family: "Space Mono", monospace;
       font-weight: 500;
       color: #adadad;
       font-size: 1.5rem;
       padding-left: 20px;
+    }
     }
   }
 }
