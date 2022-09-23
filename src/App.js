@@ -23,7 +23,7 @@ export default function App() {
           />
         </div>
         <div className="param-container">
-          <h3 className="param">Character Length</h3>
+          <h3 className="param-header">Character Length</h3>
           <h1 className="length-counter">{rangeValue}</h1>
           <div className="range-container">
             <input
