@@ -22,7 +22,7 @@ body {
       outline: 0;
       background-color: #3b3b3b;
       border: none;
-      width: 400px;
+      width: 600px;
       height: 60px;
       font-family: "Space Mono", monospace;
       font-weight: 500;
@@ -46,39 +46,92 @@ body {
   .param-container{
     background-color: #3b3b3b;
     padding-top: 20px;
-
+    width: 620px;
+    margin: auto;
+    
+    .range-container{
+      padding-left: 20px;
+      
+      .range-input{
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+      }
+      
+      .range-input::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        color: #fff;
+        border: none;
+        height: 36px;
+        width: 36px;
+        margin-top: 14px;
+      }
+      
+      .range-input::-moz-range-thumb{
+        color: #fff;
+        border: none;
+        height: 36px;
+        width: 36px;
+        margin-top: 14px;
+      }
+      
+      .range-input::-ms-thumb{
+        color: #fff;
+        border: none;
+        height: 36px;
+        width: 36px;
+        margin-top: 14px;
+      }
+      
+      .range-input:focus{
+        outline: none;
+      }
+      
+      .range-input::-ms-track{
+        width: 100%;
+        cursor: pointer;
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+      }
+    }
+    
     .param{
         color: #CBCBCB;
         font-family: "Space Mono", monospace;
+        padding-left: 20px;
     }
     
     .param-header{
         color: #CBCBCB;
         font-family: "Space Mono", monospace;
         display: inline;
+        padding-left: 20px;
     }
     
     .length-counter{
         font-family: "Space Mono", monospace;
         color: #25ff85;
         display: inline;
-        position: absolute;
-        right: 20px;
-        float: top;
+        position: relative;
+        padding-left: 500px;
     }
     
-    .strength-output{
-            margin: auto;
+    .strength-container{
+      text-align: center;
+      .strength-output{
+      margin: auto;
       outline: 0;
       background-color: #1c1c1c;
       border: none;
-      width: 400px;
+      width: 560px;
       height: 60px;
       font-family: "Space Mono", monospace;
       font-weight: 500;
       color: #adadad;
       font-size: 1.5rem;
       padding-left: 20px;
+    }
     }
   }
 }

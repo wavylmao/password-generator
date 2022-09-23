@@ -23,7 +23,8 @@ export default function App() {
           />
         </div>
         <div className="param-container">
-          <h3 className="param-header">Character Length</h3>
+          <div>
+            <h3 className="param-header">Character Length</h3>
           <h1 className="length-counter">{rangeValue}</h1>
           <div className="range-container">
             <input
@@ -45,6 +46,7 @@ export default function App() {
             <h3 className="param">Include Numbers</h3>
             <input className="checkbox" type="checkbox" />
             <h3 className="param">Include Symbols</h3>
+            <div className="strength-container">
             <input
               value=""
               placeholder="STRENGTH"
@@ -52,6 +54,9 @@ export default function App() {
               type="text"
               readOnly
             />
+            </div>
+            </div>
+          
             <br />
             <button className="generate-button">Generate</button>
           </div>
