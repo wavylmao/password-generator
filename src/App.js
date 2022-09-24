@@ -2,10 +2,8 @@
 import { useState } from "react";
 import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
+import Checks from "./components/Checks/Checks.jsx"
 import "./styles.scss";
-
-const mySlider = document.getElementById("rangeSelector");
-const sliderValue = document.getElementById("slider-value");
 
 export default function App() {
   const [rangeValue, setRangeValue] = useState("1");
@@ -14,22 +12,22 @@ export default function App() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
 
-  const slider = document.getElementById("rangeSelector");
-  const min = slider.min;
-  const max = slider.max;
-  const value = slider.value;
+  // const slider = document.getElementById("rangeSelector");
+  // const min = slider.min;
+  // const max = slider.max;
+  // const value = slider.value;
 
-  slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
-    ((value - min) / (max - min)) * 100
-  }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
+  // slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+  //   ((value - min) / (max - min)) * 100
+  // }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
 
-  slider.oninput = function () {
-    this.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
-      ((this.value - this.min) / (this.max - this.min)) * 100
-    }%, #DEE2E6 ${
-      ((this.value - this.min) / (this.max - this.min)) * 100
-    }%, #DEE2E6 100%)`;
-  };
+  // slider.oninput = function () {
+  //   this.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+  //     ((this.value - this.min) / (this.max - this.min)) * 100
+  //   }%, #DEE2E6 ${
+  //     ((this.value - this.min) / (this.max - this.min)) * 100
+  //   }%, #DEE2E6 100%)`;
+  // };
 
   return (
     <div className="App">
@@ -60,44 +58,7 @@ export default function App() {
               value={rangeValue}
             />
           </div>
-          <div className="checkbox-container">
-            <div className="check-container">
-              <label className="checkmark-container">
-                <input className="checkbox" type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-
-            <h3 className="param">Include Uppercase Letters</h3>
-            <br />
-            <div className="check-container">
-              <label className="checkmark-container">
-                <input className="checkbox" type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-
-            <h3 className="param">Include Lowercase Letters</h3>
-            <br />
-            <div className="check-container">
-              <label className="checkmark-container">
-                <input className="checkbox" type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-
-            <h3 className="param">Include Numbers</h3>
-            <br />
-            <div className="check-container">
-              <label className="checkmark-container">
-                <input className="checkbox" type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-
-            <h3 className="param">Include Symbols</h3>
-            <br />
-          </div>
+            <Checks />
           <div className="strength-container">
             <input
               value=""
