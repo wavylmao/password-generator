@@ -56,7 +56,21 @@ body {
         margin-left: 20px;
         color: #1c1c1c;
         background-color: #6bffab;
-        border: none;
+        border: 2px solid #6bffab;
+        width: 580px;
+        height: 60px;
+        font-family: "Space Mono", monospace;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      .generate-button:hover {
+        margin-left: 20px;
+        color: #6bffab;
+        background-color: #1c1c1c;
+        border: 2px solid #6bffab;
         width: 580px;
         height: 60px;
         font-family: "Space Mono", monospace;
