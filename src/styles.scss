@@ -65,8 +65,8 @@ body {
         cursor: pointer;
       }
     }
-    
-    .checkbox-container{
+
+    .checkbox-container {
       margin-left: 20px;
     }
 
@@ -95,7 +95,7 @@ body {
     }
 
     .checkmark-container input:checked ~ .checkmark {
-      background-color:#6bffab;
+      background-color: #6bffab;
       border: 3px solid #6bffab;
     }
 
@@ -111,7 +111,7 @@ body {
 
     .checkmark-container .checkmark:after {
       left: 6px;
-      top: 3px;
+      top: 2px;
       width: 5px;
       height: 10px;
       border: solid black;
@@ -135,6 +135,64 @@ body {
     }
 
     .range-container {
+      input[type="range"] {
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: block;
+        width: 580px;
+        height: 8px;
+        background-color: #d5d5d5;
+        border-radius: 8px;
+        outline: none;
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        height: 8px;
+      }
+      input[type="range"]::-moz-track {
+        -moz-appearance: none;
+        height: 8px;
+      }
+      input[type="range"]::-ms-track {
+        appearance: none;
+        height: 8px;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 35px;
+        width: 35px;
+        background-color: #3264fe;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -14px;
+        border: none;
+      }
+      input[type="range"]::-moz-range-thumb {
+        -webkit-appearance: none;
+        height: 35px;
+        width: 35px;
+        background-color: #3264fe;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -14px;
+        border: none;
+      }
+      input[type="range"]::-ms-thumb {
+        appearance: none;
+        height: 35px;
+        width: 35px;
+        background-color: #3264fe;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -14px;
+        border: none;
+      }
+      input[type="range"]:active::-webkit-slider-thumb {
+        background-color: #ffffff;
+        border: 3px solid #3264fe;
+      }
+
       .range-input {
         margin-top: 30px;
         margin-bottom: 30px;

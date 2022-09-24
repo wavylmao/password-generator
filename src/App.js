@@ -3,6 +3,9 @@ import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import "./styles.scss";
 
+  const mySlider = document.getElementById("rangeSelector");
+  const sliderValue = document.getElementById("slider-value");
+
 export default function App() {
   const [rangeValue, setRangeValue] = useState("1");
 
