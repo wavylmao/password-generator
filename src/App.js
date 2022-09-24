@@ -12,6 +12,16 @@ export default function App() {
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
+  
+document.getElementById("rangeSelector").oninput = function () {
+  var value = ((this.value - this.min) / (this.max - this.min)) * 100;
+  this.style.background =
+    "linear-gradient(to right, #6bffab 0%, #6bffab " +
+    value +
+    "%, #fff " +
+    value +
+    "%, white 100%)";
+};
 
   return (
     <div className="App">

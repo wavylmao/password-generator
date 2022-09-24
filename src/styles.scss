@@ -143,7 +143,6 @@ body {
         width: 580px;
         height: 8px;
         background-color: #d5d5d5;
-        border-radius: 8px;
         outline: none;
       }
       input[type="range"]::-webkit-slider-runnable-track {
@@ -160,42 +159,58 @@ body {
       }
       input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
-        height: 35px;
-        width: 35px;
-        background-color: #3264fe;
+        height: 30px;
+        width: 30px;
+        background-color: #fff;
         border-radius: 50%;
         cursor: pointer;
-        margin-top: -14px;
+        margin-top: -11px;
         border: none;
       }
       input[type="range"]::-moz-range-thumb {
         -webkit-appearance: none;
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         background-color: #3264fe;
         border-radius: 50%;
         cursor: pointer;
-        margin-top: -14px;
+        margin-top: -11px;
         border: none;
+      }
+      input[type="range"]::-moz-range-progress {
+        background-color: #6bffab;
+      }
+      input[type="range"]::-moz-range-track {
+        background-color: #fff;
       }
       input[type="range"]::-ms-thumb {
         appearance: none;
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         background-color: #3264fe;
         border-radius: 50%;
         cursor: pointer;
-        margin-top: -14px;
+        margin-top: -11px;
         border: none;
       }
+      input[type="range"]::-ms-fill-lower {
+        background-color: #6bffab;
+      }
+      input[type="range"]::-ms-fill-upper {
+        background-color: #fff;
+      }
       input[type="range"]:active::-webkit-slider-thumb {
-        background-color: #ffffff;
-        border: 3px solid #3264fe;
+        background-color: #1c1c1c;
+        border: 3px solid #6bffab;
       }
 
       .range-input {
         margin-top: 30px;
         margin-bottom: 30px;
+      }
+
+      #rangeSelector {
+        background: linear-gradient(to right, #6bffab 0%, #6bffab 50%, #fff 50%, #fff 100%);
       }
 
       padding-left: 20px;
