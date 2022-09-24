@@ -12,22 +12,22 @@ export default function App() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
 
-  // const slider = document.getElementById("rangeSelector");
-  // const min = slider.min;
-  // const max = slider.max;
-  // const value = slider.value;
+  const slider = document.getElementById("rangeSelector");
+  const min = slider.min;
+  const max = slider.max;
+  const value = slider.value;
 
-  // slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
-  //   ((value - min) / (max - min)) * 100
-  // }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
+  slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+    ((value - min) / (max - min)) * 100
+  }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
 
-  // slider.oninput = function () {
-  //   this.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
-  //     ((this.value - this.min) / (this.max - this.min)) * 100
-  //   }%, #DEE2E6 ${
-  //     ((this.value - this.min) / (this.max - this.min)) * 100
-  //   }%, #DEE2E6 100%)`;
-  // };
+  slider.oninput = function () {
+    this.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+      ((this.value - this.min) / (this.max - this.min)) * 100
+    }%, #DEE2E6 ${
+      ((this.value - this.min) / (this.max - this.min)) * 100
+    }%, #DEE2E6 100%)`;
+  };
 
   return (
     <div className="App">
