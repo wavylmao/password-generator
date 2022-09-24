@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
+import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import "./styles.scss";
 
 export default function App() {
@@ -38,31 +40,55 @@ export default function App() {
             />
           </div>
           <div className="checkbox-container">
-            <input className="checkbox" type="checkbox" />
+            <div className="check-container">
+              <label className="checkmark-container">
+                <input className="checkbox" type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+
             <h3 className="param">Include Uppercase Letters</h3>
             <br />
-            <input className="checkbox" type="checkbox" />
+            <div className="check-container">
+              <label className="checkmark-container">
+                <input className="checkbox" type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+
             <h3 className="param">Include Lowercase Letters</h3>
             <br />
-            <input className="checkbox" type="checkbox" />
+            <div className="check-container">
+              <label className="checkmark-container">
+                <input className="checkbox" type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+
             <h3 className="param">Include Numbers</h3>
             <br />
-            <input className="checkbox" type="checkbox" />
+            <div className="check-container">
+              <label className="checkmark-container">
+                <input className="checkbox" type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+
             <h3 className="param">Include Symbols</h3>
             <br />
-            <div className="strength-container">
-              <input
-                value=""
-                placeholder="STRENGTH"
-                className="strength-output"
-                type="text"
-                readOnly
-              />
-            </div>
+          </div>
+          <div className="strength-container">
+            <input
+              value=""
+              placeholder="STRENGTH"
+              className="strength-output"
+              type="text"
+              readOnly
+            />
           </div>
           <br />
           <div className="button-container">
-            <button className="generate-button">Generate</button>
+            <button className="generate-button">Generate →</button>
           </div>
         </div>
       </div>

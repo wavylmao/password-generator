@@ -16,6 +16,7 @@ body {
 
   .output-container {
     text-align: center;
+    position: relative;
 
     .password-output {
       margin: auto;
@@ -43,78 +44,136 @@ body {
     }
   }
 
-  .param-container{
+  .param-container {
     background-color: #3b3b3b;
     padding-top: 20px;
     width: 620px;
     margin: auto;
     padding-bottom: 20px;
 
-    .button-container{
-      .generate-button{
+    .button-container {
+      .generate-button {
         margin-left: 20px;
+        color: #1c1c1c;
+        background-color: #6bffab;
+        border: none;
+        width: 580px;
+        height: 60px;
+        font-family: "Space Mono", monospace;
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
       }
     }
-
+    
     .checkbox-container{
-      .checkbox{
-        margin-left: 20px;
-        margin-top: 20px;
-      }
+      margin-left: 20px;
     }
 
-    .length-counter-container{
+    .checkmark-container {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .checkmark-container input {
+      display: block;
+      position: relative;
+      opacity: 0;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: #3b3b3b;
+      border: 3px solid #fff;
+      cursor: pointer;
+    }
+
+    .checkmark-container input:checked ~ .checkmark {
+      background-color:#6bffab;
+      border: 3px solid #6bffab;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .checkmark-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    .checkmark-container .checkmark:after {
+      left: 6px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .length-counter-container {
       position: relative;
 
-      .length-counter{
+      .length-counter {
         font-family: "Space Mono", monospace;
-        color: #25ff85;
+        color: #6bffab;
         display: inline;
         position: absolute;
         right: 20px;
         top: -60px;
       }
     }
-    
-    .range-container{
 
-      .range-input{
-        margin-top: 20px;
+    .range-container {
+      .range-input {
+        margin-top: 30px;
+        margin-bottom: 30px;
       }
 
       padding-left: 20px;
     }
-    
-    .param{
-        color: #CBCBCB;
-        font-family: "Space Mono", monospace;
-        padding-left: 20px;
-        display: inline;
-    }
-    
-    .param-header{
-        color: #CBCBCB;
-        font-family: "Space Mono", monospace;
-        display: inline;
-        padding-left: 20px;
-    }
-    
-    .strength-container{
-      text-align: center;
-      margin-top: 20px;
-      .strength-output{
-      margin: auto;
-      outline: 0;
-      background-color: #1c1c1c;
-      border: none;
-      width: 560px;
-      height: 60px;
+
+    .param {
+      color: #cbcbcb;
       font-family: "Space Mono", monospace;
-      font-weight: 500;
-      color: #adadad;
-      font-size: 1.5rem;
+      position: relative;
+      left: 40px;
+      display: inline;
+    }
+
+    .param-header {
+      color: #cbcbcb;
+      font-family: "Space Mono", monospace;
+      display: inline;
       padding-left: 20px;
     }
+
+    .strength-container {
+      text-align: center;
+      margin-top: 20px;
+      .strength-output {
+        margin: auto;
+        outline: 0;
+        background-color: #1c1c1c;
+        border: none;
+        width: 560px;
+        height: 60px;
+        font-family: "Space Mono", monospace;
+        font-weight: 500;
+        color: #adadad;
+        font-size: 1.5rem;
+        padding-left: 20px;
+      }
     }
   }
 }
