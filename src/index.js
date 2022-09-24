@@ -1,3 +1,4 @@
+//jshint esversion:6
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 

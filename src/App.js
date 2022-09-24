@@ -1,10 +1,11 @@
+//jshint esversion:6
 import { useState } from "react";
 import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import "./styles.scss";
 
-  const mySlider = document.getElementById("rangeSelector");
-  const sliderValue = document.getElementById("slider-value");
+const mySlider = document.getElementById("rangeSelector");
+const sliderValue = document.getElementById("slider-value");
 
 export default function App() {
   const [rangeValue, setRangeValue] = useState("1");
@@ -12,16 +13,23 @@ export default function App() {
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
-  
-document.getElementById("rangeSelector").oninput = function () {
-  var value = ((this.value - this.min) / (this.max - this.min)) * 100;
-  this.style.background =
-    "linear-gradient(to right, #6bffab 0%, #6bffab " +
-    value +
-    "%, #fff " +
-    value +
-    "%, white 100%)";
-};
+
+  const slider = document.getElementById("rangeSelector");
+  const min = slider.min;
+  const max = slider.max;
+  const value = slider.value;
+
+  slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+    ((value - min) / (max - min)) * 100
+  }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
+
+  slider.oninput = function () {
+    this.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
+      ((this.value - this.min) / (this.max - this.min)) * 100
+    }%, #DEE2E6 ${
+      ((this.value - this.min) / (this.max - this.min)) * 100
+    }%, #DEE2E6 100%)`;
+  };
 
   return (
     <div className="App">
