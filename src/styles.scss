@@ -5,6 +5,60 @@ body {
 }
 
 .wrapper {
+  .checkbox-container {
+    margin-left: 20px;
+  }
+
+  .checkmark-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .checkmark-container input {
+    display: block;
+    position: relative;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #3b3b3b;
+    border: 3px solid #fff;
+    cursor: pointer;
+  }
+
+  .checkmark-container input:checked ~ .checkmark {
+    background-color: #6bffab;
+    border: 3px solid #6bffab;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkmark-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
   .heading {
     font-family: "Space Mono", monospace;
     text-align: center;
