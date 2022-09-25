@@ -1,5 +1,5 @@
 //jshint esversion:6
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import _, { includes } from "lodash";
@@ -69,6 +69,7 @@ export default function App() {
     setRangeValue(document.getElementById("rangeSelector").value);
   }
 
+  useEffect(() => {
       const slider = document.getElementById("rangeSelector");
       const min = slider.min;
       const max = slider.max;
@@ -85,7 +86,8 @@ export default function App() {
           ((this.value - this.min) / (this.max - this.min)) * 100
         }%, #DEE2E6 100%)`;
       };
-
+  })
+  
   function handleClick() {}
 
   return (
