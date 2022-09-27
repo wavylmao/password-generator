@@ -16,7 +16,7 @@ export default function App() {
   const symbols = "!@#$%^&*()";
   var charsArray = [];
   var chars = "";
-  var passwordLength;
+  var passwordLength = 12;
   var password = "";
 
   function handleCheckLowerCase() {
@@ -67,7 +67,6 @@ export default function App() {
 
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
-    passwordLength = rangeValue;
     console.log(passwordLength);
   }
 
