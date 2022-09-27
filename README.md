@@ -46,6 +46,8 @@ Fix bug where input values flip when checked and slider is changed - In progress
 
 Add strength calculation - In progress ⏳
 
+Add logic to make sure that all parameters for password are fufilled - Not Started 🛑
+
 Add responsive layout to different devices - Not started 🛑
 
 Refactor code - Not started 🛑
