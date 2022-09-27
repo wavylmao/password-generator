@@ -1,6 +1,8 @@
 # password-generator
 
-Password generator built with javascript.
+Password generator built with React and JavaScript. Please note, the actual algorithm to generate the password isn't mine. It's from a user named Gumbo on this stack overflow question:
+
+https://stackoverflow.com/questions/1497481/javascript-password-generator
 
 # Setup for local development
 
@@ -18,7 +20,7 @@ For VSCode/GitLens:
 
 [![image.png](https://i.postimg.cc/mgbgcfWR/image.png)](https://postimg.cc/6ymXSPQ1)
 
-To install required dependencies and start app on port 3000, run the following commands in the terminal.
+To install required dependencies and start app on port 8080, run the following commands in the terminal.
 
 ```
 npm install
@@ -26,7 +28,7 @@ npm install
 npm start
 ```
 
-You can now find this app running on localhost:3000!
+You can now find this app running on localhost:8080!
 
 # Development Roadmap
 
