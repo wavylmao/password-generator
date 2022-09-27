@@ -4,6 +4,10 @@ Password generator built with React and JavaScript. Please note, the actual algo
 
 https://stackoverflow.com/questions/1497481/javascript-password-generator
 
+The frontend design is from a challenge on Frontend Mentor. Check it out here:
+
+https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh
+
 # Setup for local development
 
 Clone to a local directory. If you are using VSCode, I recommend using the GitLens extension for quick access. Otherwise, just use the terminal.
