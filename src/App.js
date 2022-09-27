@@ -1,8 +1,8 @@
-//jshint esversion:6
 import { useEffect, useState } from "react";
 import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import _, { includes } from "lodash";
+import jQuery from "jquery";
 import "./styles.scss";
 
 export default function App() {
@@ -16,7 +16,6 @@ export default function App() {
   const symbols = "!@#$%^&*()";
   var charsArray = [];
   var chars = "";
-  var passwordLength = "";
   var password = "";
 
   function handleCheckLowerCase() {
@@ -64,11 +63,9 @@ export default function App() {
     console.log(chars);
   }
   const [rangeValue, setRangeValue] = useState("1");
-  const [passwordValue, setPasswordValue] = useState("");
 
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
-    console.log(passwordLength);
   }
 
   useEffect(() => {
@@ -92,12 +89,11 @@ export default function App() {
 
   function handleClick() {
     password = "";
-    for (var i = 0; i <= passwordLength; i++) {
-      var randomNumber = Math.floor(Math.random() * chars.length);
-      password += chars.substring(randomNumber, randomNumber + 1);
+    for (var i = 1, n = chars.length; i <= document.getElementById("rangeSelector").value; ++i) {
+      password += chars.charAt(Math.floor(Math.random() * n));
     }
 
-    
+    console.log(password);
     document.getElementById("password").value = password;
   }
 
