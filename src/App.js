@@ -16,7 +16,7 @@ export default function App() {
   const symbols = "!@#$%^&*()";
   var charsArray = [];
   var chars = "";
-  var passwordLength = rangeValue;
+  var passwordLength = 12;
   var password = "";
 
   function handleCheckLowerCase() {
@@ -64,6 +64,7 @@ export default function App() {
     console.log(chars);
   }
   const [rangeValue, setRangeValue] = useState("1");
+  const [passwordValue, setPasswordValue] = useState("");
 
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
@@ -89,11 +90,13 @@ export default function App() {
   });
 
   function handleClick() {
+    password = "";
     for (var i = 0; i <= passwordLength; i++) {
       var randomNumber = Math.floor(Math.random() * chars.length);
       password += chars.substring(randomNumber, randomNumber + 1);
     }
 
+    
     document.getElementById("password").value = password;
   }
 
@@ -103,7 +106,7 @@ export default function App() {
         <h1 className="heading">Password Generator</h1>
         <div className="output-container">
           <input
-            value=""
+            value={password}
             placeholder="P4$5W0rD!"
             className="password-output"
             type="text"
@@ -192,7 +195,9 @@ export default function App() {
           </div>
           <br />
           <div className="button-container">
-            <button onClick={handleClick} className="generate-button">Generate →</button>
+            <button onClick={handleClick} className="generate-button">
+              Generate →
+            </button>
           </div>
         </div>
       </div>
