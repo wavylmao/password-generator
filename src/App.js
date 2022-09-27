@@ -16,7 +16,7 @@ export default function App() {
   const symbols = "!@#$%^&*()";
   var charsArray = [];
   var chars = "";
-  var passwordLength = 12;
+  var passwordLength = "";
   var password = "";
 
   function handleCheckLowerCase() {
@@ -68,6 +68,7 @@ export default function App() {
 
   function handleRangeChange() {
     setRangeValue(document.getElementById("rangeSelector").value);
+    console.log(passwordLength);
   }
 
   useEffect(() => {
