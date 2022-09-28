@@ -64,7 +64,7 @@ export default function App() {
     }
     console.log(charsArray.current);
   }
-  
+
   const [rangeValue, setRangeValue] = useState("1");
 
   function handleRangeChange() {
@@ -78,7 +78,7 @@ export default function App() {
     const min = slider.min;
     const max = slider.max;
     const value = slider.value;
-    
+
     slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
       ((value - min) / (max - min)) * 100
     }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
