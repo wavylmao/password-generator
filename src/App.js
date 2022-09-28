@@ -16,7 +16,7 @@ export default function App() {
   const symbols = "!@#$%^&*()";
   var charsArray = useRef([]);
   var chars = "";
-  var password = "";
+  var password = useRef("");
 
   function flipCheckUpperCase() {
     includeUpperCase = document.getElementById("uppercaseCheckbox").checked;
@@ -96,16 +96,16 @@ export default function App() {
     chars = charsArray.current.join("");
     console.log(charsArray.current);
 
-    password = "";
+    password.current = "";
     for (
       var i = 1, n = chars.length;
       i <= document.getElementById("rangeSelector").value;
       ++i
     ) {
-      password += chars.charAt(Math.floor(Math.random() * n));
+      password.current += chars.charAt(Math.floor(Math.random() * n));
     }
 
-    document.getElementById("password").value = password;
+    document.getElementById("password").value = password.current;
   }
 
   return (
@@ -114,7 +114,7 @@ export default function App() {
         <h1 className="heading">Password Generator</h1>
         <div className="output-container">
           <input
-            value={password}
+            value={password.current}
             placeholder="P4$5W0rD!"
             className="password-output"
             type="text"
@@ -135,7 +135,7 @@ export default function App() {
               type="range"
               min="1"
               max="20"
-
+              value={rangeValue}
             />
           </div>
           <div className="checkbox-container">
