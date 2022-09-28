@@ -42,11 +42,11 @@ Add functionality to generate button - Done ✅
 
 Make password length update dynamically - Done ✅
 
-Fix bug where input values flip when checked and slider is changed - In progress ⏳
+Fix bug where input values flip when checked and slider is changed - Done ✅
 
 Add strength calculation - In progress ⏳
 
-Add logic to make sure that all parameters for password are fufilled - Not Started 🛑
+Add logic to make sure that all parameters for password are fufilled - In progress ⏳
 
 Add responsive layout to different devices - Not started 🛑
 
