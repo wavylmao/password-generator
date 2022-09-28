@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import _, { includes } from "lodash";
@@ -14,58 +14,63 @@ export default function App() {
   const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numbers = "0123456789";
   const symbols = "!@#$%^&*()";
-  var charsArray = [];
+  var charsArray = useRef([]);
   var chars = "";
   var password = "";
 
-  function handleCheckLowerCase() {
-    includeLowerCase = !includeLowerCase;
-
-    if (includeLowerCase === true) {
-      charsArray.push(lowerCaseLetters);
-    } else {
-      charsArray.splice(charsArray.indexOf(lowerCaseLetters), 1);
-    }
-    chars = charsArray.join("");
-    console.log(chars);
-  }
-  function handleCheckUpperCase() {
-    includeUpperCase = !includeUpperCase;
+  function flipCheckUpperCase() {
+    includeUpperCase = document.getElementById("uppercaseCheckbox").checked;
 
     if (includeUpperCase === true) {
-      charsArray.push(upperCaseLetters);
+      charsArray.current.push(upperCaseLetters);
     } else {
-      charsArray.splice(charsArray.indexOf(upperCaseLetters), 1);
+      charsArray.current.splice(
+        charsArray.current.indexOf(upperCaseLetters),
+        1
+      );
     }
-    chars = charsArray.join("");
-    console.log(chars);
+    console.log(charsArray.current);
   }
-  function handleCheckNumbers() {
-    includeNumbers = !includeNumbers;
+  function flipCheckLowerCase() {
+    includeLowerCase = document.getElementById("lowercaseCheckbox").checked;
+
+    if (includeLowerCase === true) {
+      charsArray.current.push(lowerCaseLetters);
+    } else {
+      charsArray.current.splice(
+        charsArray.current.indexOf(lowerCaseLetters),
+        1
+      );
+    }
+    console.log(charsArray.current);
+  }
+  function flipCheckNumbers() {
+    includeNumbers = document.getElementById("numbersCheckbox").checked;
 
     if (includeNumbers === true) {
-      charsArray.push(numbers);
+      charsArray.current.push(numbers);
     } else {
-      charsArray.splice(charsArray.indexOf(numbers), 1);
+      charsArray.current.splice(charsArray.current.indexOf(numbers), 1);
     }
-    chars = charsArray.join("");
-    console.log(chars);
+    console.log(charsArray.current);
   }
-  function handleCheckSymbols() {
-    includeSymbols = !includeSymbols;
+  function flipCheckSymbols() {
+    includeSymbols = document.getElementById("symbolsCheckbox").checked;
 
     if (includeSymbols === true) {
-      charsArray.push(symbols);
+      charsArray.current.push(symbols);
     } else {
-      charsArray.splice(charsArray.indexOf(symbols), 1);
+      charsArray.current.splice(charsArray.current.indexOf(symbols), 1);
     }
-    chars = charsArray.join("");
-    console.log(chars);
+    console.log(charsArray.current);
   }
+  
   const [rangeValue, setRangeValue] = useState("1");
 
   function handleRangeChange() {
+    //USESTATE (setRangeValue) HOOK RESETS ARRAY FOR SOME REASON (I DON'T KNOW WHY)
     setRangeValue(document.getElementById("rangeSelector").value);
+    console.log(charsArray.current);
   }
 
   useEffect(() => {
@@ -73,7 +78,7 @@ export default function App() {
     const min = slider.min;
     const max = slider.max;
     const value = slider.value;
-
+    
     slider.style.background = `linear-gradient(to right, #6bffab 0%, #6bffab ${
       ((value - min) / (max - min)) * 100
     }%, #DEE2E6 ${((value - min) / (max - min)) * 100}%, #DEE2E6 100%)`;
@@ -88,12 +93,18 @@ export default function App() {
   });
 
   function handleClick() {
+    chars = charsArray.current.join("");
+    console.log(charsArray.current);
+
     password = "";
-    for (var i = 1, n = chars.length; i <= document.getElementById("rangeSelector").value; ++i) {
+    for (
+      var i = 1, n = chars.length;
+      i <= document.getElementById("rangeSelector").value;
+      ++i
+    ) {
       password += chars.charAt(Math.floor(Math.random() * n));
     }
 
-    console.log(password);
     document.getElementById("password").value = password;
   }
 
@@ -124,15 +135,16 @@ export default function App() {
               type="range"
               min="1"
               max="20"
-              value={rangeValue}
+
             />
           </div>
           <div className="checkbox-container">
             <div className="check-container">
               <label className="checkmark-container">
                 <input
-                  onClick={handleCheckUpperCase}
+                  onClick={flipCheckUpperCase}
                   className="checkbox"
+                  id="uppercaseCheckbox"
                   type="checkbox"
                 />
                 <span className="checkmark"></span>
@@ -144,7 +156,8 @@ export default function App() {
             <div className="check-container">
               <label className="checkmark-container">
                 <input
-                  onClick={handleCheckLowerCase}
+                  onClick={flipCheckLowerCase}
+                  id="lowercaseCheckbox"
                   className="checkbox"
                   type="checkbox"
                 />
@@ -157,8 +170,9 @@ export default function App() {
             <div className="check-container">
               <label className="checkmark-container">
                 <input
-                  onClick={handleCheckNumbers}
+                  onClick={flipCheckNumbers}
                   className="checkbox"
+                  id="numbersCheckbox"
                   type="checkbox"
                 />
                 <span className="checkmark"></span>
@@ -170,8 +184,9 @@ export default function App() {
             <div className="check-container">
               <label className="checkmark-container">
                 <input
-                  onClick={handleCheckSymbols}
+                  onClick={flipCheckSymbols}
                   className="checkbox"
+                  id="symbolsCheckbox"
                   type="checkbox"
                 />
                 <span className="checkmark"></span>
