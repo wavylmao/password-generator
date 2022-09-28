@@ -1,8 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
-import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
-import _, { includes } from "lodash";
-import jQuery from "jquery";
 import "./styles.scss";
 
 export default function App() {
