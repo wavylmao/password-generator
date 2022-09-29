@@ -103,6 +103,14 @@ export default function App() {
 
     document.getElementById("password").value = password.current;
   }
+  
+  function copyPassword() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
+}
 
   return (
     <div className="App">
@@ -117,6 +125,7 @@ export default function App() {
             id="password"
             readOnly
           />
+          <i class="fa-regular fa-copy"></i>
         </div>
         <div className="param-container">
           <h3 className="param-header">Character Length</h3>
