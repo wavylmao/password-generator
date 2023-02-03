@@ -1,4 +1,4 @@
-# password-generator
+# THIS PROJECT IS NOW DEPRECATED. FIND THE UPDATED REWRITTEN VERSION PINNED ON MY GITHUB!
 
 Password generator built with React and JavaScript. Please note, the actual algorithm to generate the password isn't mine. It's from a user named Gumbo on this stack overflow question:
 
